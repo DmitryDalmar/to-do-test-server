@@ -16,8 +16,8 @@
 Params:
 ```json
 {
-    email: 'email', 
-    password: 'password'
+    "email": "email", 
+    "password": "password"
 }
 ```
 
