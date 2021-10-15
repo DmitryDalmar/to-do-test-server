@@ -1,6 +1,7 @@
 ## Setup
 
-- composer install
+- docker-compose up -d
+- docker-compose exec laravel.test composer install
 - alias sail='bash vendor/bin/sail'
 - sail up -d
 - sail composer update
