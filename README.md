@@ -28,7 +28,7 @@
 }
 
 ## Register
-- POST: /api/register - {
+POST: /api/register - {
   email: lkozey32@example.net
   password: 12345678
   password_confirmation: 12345678
