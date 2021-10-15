@@ -2,6 +2,7 @@
 - composer install
 - alias sail='bash vendor/bin/sail'
 - sail up -d
+- sail composer update
 - sail artisan migrate
 - sail artisan db:seed
 - sail artisan optimize:clear
@@ -11,7 +12,15 @@
 ## To get json response you need to add header: Accept:application/json
 
 ## Login
-- POST: /api/login - {email: 'email', password: 'password'}.
+- POST: /api/login
+Params:
+```json
+{
+    email: 'email', 
+    password: 'password'
+}
+```
+
 ## Response. To get auth routes, need to send header: {Authorization:Bearer $token-value-in-response}
 ```json
 {
@@ -28,7 +37,8 @@
 ```
 
 ## Register
-POST: /api/register - 
+POST: /api/register
+Params:
 ```json
 {
   "email": "lkozey32@example.net",
