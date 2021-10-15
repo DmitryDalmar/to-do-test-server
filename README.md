@@ -7,7 +7,7 @@
 - sail artisan db:seed
 - sail artisan optimize:clear
 
-## To get json response need header: Accept:application/json
+## To get json response you need to add header: Accept:application/json
 
 ## Task urls
 - GET: http://to-do.test/api/task - get task list
