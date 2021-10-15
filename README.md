@@ -1,8 +1,9 @@
 ## Setup
 
+- composer install
 - alias sail='bash vendor/bin/sail'
 - sail up -d
-- sail composer install
+- sail composer update
 - sail artisan migrate
 - sail artisan db:seed
 - sail artisan optimize:clear

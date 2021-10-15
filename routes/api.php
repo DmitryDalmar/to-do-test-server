@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\TaskController;
+use App\Http\Controllers\Api\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,5 +22,6 @@ Route::post('login', [AuthController::class, 'login'])->name('login');
 Route::resource('task', TaskController::class);
 
 Route::middleware('auth:sanctum')->group(function () {
+    Route::get('user', [UserController::class, 'show'])->name('user.show');
     Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 });
