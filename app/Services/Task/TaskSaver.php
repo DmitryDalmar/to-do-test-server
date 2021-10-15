@@ -11,4 +11,17 @@ class TaskSaver extends Saver
     {
         $this->instance = $instance ?? new Task();
     }
+
+    /**
+     * Set relation with user, by auth user
+     */
+    public function setUser()
+    {
+        /* @var \App\Models\User\User $authUser */
+        $authUser = auth()->user();
+
+        $this->user_id = auth()->user() ? $authUser->id : null;
+
+        return $this;
+    }
 }

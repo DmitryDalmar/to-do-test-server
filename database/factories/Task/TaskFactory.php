@@ -3,6 +3,7 @@
 namespace Database\Factories\Task;
 
 use App\Models\Task\Task;
+use App\Models\User\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class TaskFactory extends Factory
@@ -21,9 +22,12 @@ class TaskFactory extends Factory
      */
     public function definition()
     {
+        $userCount = User::count();
+
         return [
             'title' => $this->faker->word . ' ' .  $this->faker->word,
             'description' => $this->faker->text,
+            'user_id' => $userCount ? rand(1, $userCount) : null,
         ];
     }
 }

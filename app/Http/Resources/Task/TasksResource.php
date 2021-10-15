@@ -2,10 +2,13 @@
 
 namespace App\Http\Resources\Task;
 
+use App\Traits\Resources\ListResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class TasksResource extends ResourceCollection
 {
+    use ListResource;
+
     /**
      * Transform the resource into an array.
      *
@@ -23,28 +26,9 @@ class TasksResource extends ResourceCollection
                 'description' => (string) $item->description,
                 'created_at' => $item->created_at,
                 'updated_at' => $item->updated_at,
-                'user_id' => $item->user_id
             ];
         }
 
-        return [
-            'data' => $result,
-            'pagination' => [
-                'total' => $this->total(),
-                'count' => $this->count(),
-                'per_page' => $this->perPage(),
-                'current_page' => $this->currentPage(),
-                'total_pages' => $this->lastPage()
-            ]
-        ];
-    }
-
-    public function withResponse($request, $response)
-    {
-        $jsonResponse = json_decode($response->getContent(), true);
-
-        unset($jsonResponse['links'],$jsonResponse['meta']);
-
-        $response->setContent(json_encode($jsonResponse));
+        return $this->getListResult($result);
     }
 }

@@ -25,6 +25,7 @@ class TaskController extends Controller
     {
         $taskSaver = (new TaskSaver())
             ->fill($request->all())
+            ->setUser()
             ->save();
 
         return new TaskResource($taskSaver->getInstance());

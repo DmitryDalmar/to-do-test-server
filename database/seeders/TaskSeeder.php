@@ -7,6 +7,7 @@ use App\Models\Material\MaterialColor;
 use App\Models\Media\MediaTemp;
 use App\Models\Task\Task;
 use App\Models\Useful\Useful;
+use App\Models\User\User;
 use App\Services\Admin\Material\MaterialColorSaver;
 use App\Services\Admin\Material\MaterialSaver;
 use App\Services\Admin\Useful\UsefulSaver;
@@ -38,6 +39,10 @@ class TaskSeeder extends Seeder
     public function run()
     {
         DB::beginTransaction();
+
+        User::factory()
+            ->count(10)
+            ->create();
 
         Task::factory()
             ->count(25)
