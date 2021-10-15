@@ -2,13 +2,14 @@
 
 namespace Database\Seeders;
 
+
 use Illuminate\Database\Seeder;
 use Faker\Generator;
 use Illuminate\Container\Container;
 use DB;
-use App\Models\Task\Task;
+use App\Models\User\User;
 
-class TaskSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * The current Faker instance.
@@ -30,7 +31,7 @@ class TaskSeeder extends Seeder
     {
         DB::beginTransaction();
 
-        Task::factory()
+        User::factory()
             ->count(25)
             ->create();
 
