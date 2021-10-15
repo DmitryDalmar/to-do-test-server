@@ -2,7 +2,6 @@
 - composer install
 - alias sail='bash vendor/bin/sail'
 - sail up -d
-- sail composer update
 - sail artisan migrate
 - sail artisan db:seed
 - sail artisan optimize:clear
@@ -32,9 +31,9 @@
 POST: /api/register - 
 ```json
 {
-  "email": "lkozey32@example.net"
-  "password": "12345678"
-  "password_confirmation": "12345678"
+  "email": "lkozey32@example.net",
+  "password": "12345678",
+  "password_confirmation": "12345678",
   "name": "kozey"
 }
 ```
