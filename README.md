@@ -11,10 +11,10 @@
 
 ## To get json response you need to add header: Accept:application/json
 
-## Auth urls
 ## Login
 - POST: /api/login - {email: 'email', password: 'password'}.
 ## Response. To get auth routes, need to send header: {Authorization:Bearer $token-value-in-response}
+```json
 {
     "token": "4|WyXPwe85nC842VFemfY4Yc7tbRHaS9wsmSnlAfYU",
     "user": {
@@ -26,15 +26,20 @@
       "updated_at": "2021-10-15T12:09:33.000000Z"
     }
 }
+```
 
 ## Register
-POST: /api/register - {
+POST: /api/register - 
+```json
+{
   email: lkozey32@example.net
   password: 12345678
   password_confirmation: 12345678
   name: kozey
 }
+```
 ## Response
+```json
 {
     "token": "5|jlrC9Xzuc0XnR5b8yM1VrZHx2sFYso8GAm045kB0",
     "user": {
@@ -46,10 +51,12 @@ POST: /api/register - {
         "email_verified_at": "2021-10-15T12:42:51.000000Z"
     }
 }
+```
 
 ## Get Auth User. Header {Authorization:Bearer $token-value-in-login-response}
-- GET: /api/user.
+GET: /api/user.
 ## Response
+```json
 {
     "id": 37,
     "name": "kozey",
@@ -58,14 +65,17 @@ POST: /api/register - {
     "created_at": "2021-10-15T12:42:51.000000Z",
     "updated_at": "2021-10-15T12:42:51.000000Z"
 }
+```
 
 ## Logout. Header {Authorization:Bearer $token-value-in-login-response}
 - POST: /api/logout.
 
 ## Response
+```json
 {
     "message": "logout"
 }
+```
 
 ## Task urls
 - GET: /api/task - get task list
