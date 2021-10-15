@@ -32,10 +32,10 @@
 POST: /api/register - 
 ```json
 {
-  email: lkozey32@example.net
-  password: 12345678
-  password_confirmation: 12345678
-  name: kozey
+  "email": "lkozey32@example.net"
+  "password": "12345678"
+  "password_confirmation": "12345678"
+  "name": "kozey"
 }
 ```
 ## Response
