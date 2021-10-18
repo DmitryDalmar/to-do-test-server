@@ -36,6 +36,8 @@ services:
             POSTGRES_DB: '${DB_DATABASE}'
         networks:
             - sail
+        ports:
+            - '5432:5432'
         healthcheck:
             retries: 3
             timeout: 5s

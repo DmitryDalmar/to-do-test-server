@@ -16,7 +16,7 @@ class TaskController extends Controller
     {
         $tasks = (new TaskGetter())
             ->orderBy($request->input('order_by'), $request->input('order_type'))
-            ->paginate($request->input('per_page'));
+            ->paginate(1000);
 
         return new TasksResource($tasks);
     }
